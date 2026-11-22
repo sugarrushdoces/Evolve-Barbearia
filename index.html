@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Conheça a Barbearia Evolve e solicite seu horário com Bryan. Cortes, barba e tratamentos capilares.">
+<title>Barbearia Evolve | Corte, barba e cuidado</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body id="inicio">
+<header class="top">
+  <div class="wrap bar">
+    <a href="#inicio" aria-label="Barbearia Evolve, início"><img class="logo" src="photos/logo.png" alt="Barbearia Evolve" width="82" height="82"></a>
+    <nav class="social" aria-label="Canais da Barbearia Evolve">
+      <a data-link="whatsapp" href="https://wa.me/5541988223209" aria-label="WhatsApp"><img src="icons/whatsapp.png" alt="" class="img-icon"></a>
+      <a data-link="instagram" href="#contatos" aria-label="Instagram"><img src="icons/Instagram.png" alt="" class="img-icon"></a>
+      <a data-link="googleReview" href="#avaliacoes" aria-label="Avaliações no Google"><img src="icons/Google.png" alt="" class="img-icon"></a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Barbearia Evolve</p>
+      <h1>Evoluir é ter coragem<br>de acreditar.</h1>
+      <p>Corte, barba e cuidado, com atenção a cada detalhe.<br>Agende seu horário com Bryan.</p>
+      <a class="button" href="#agendar">Agendar horário</a>
+    </div>
+  </section>
+  <section id="servicos" class="services">
+    <div class="wrap services-layout">
+      <div>
+        <h2>Serviços</h2>
+        <p>Abra uma categoria e marque os serviços que quer incluir no seu atendimento.</p>
+      </div>
+      <div>
+        <div id="service-list" class="service-accordion"></div>
+        <div class="actions service-actions"><a class="button outline" href="#agendar">Continuar para o agendamento</a></div>
+      </div>
+    </div>
+  </section>
+  <section id="historia" class="wrap split">
+    <img class="photo family" src="photos/familia.png" alt="Família reunida no espaço da Barbearia Evolve" loading="lazy">
+    <div>
+      <p class="eyebrow">Nossa história</p>
+      <h2>Um sonho construído corte a corte.</h2>
+      <p>Antes de abrir as portas da Evolve, foram muitos cortes, dias de trabalho, erros que ensinaram e noites pensando em como melhorar. Cada fase nos trouxe até aqui.</p>
+      <p>Ver esse sonho ganhar forma é uma alegria que dividimos com quem confiou no nosso trabalho desde o primeiro corte. Agradecemos a Deus pela força para seguir e a cada pessoa que fez parte dessa caminhada.</p>
+      <p class="signature">Bem-vindos à Barbearia Evolve.<br>Evoluir juntos, sempre.</p>
+    </div>
+  </section>
+  <section id="bryan" class="professional">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Barbeiro profissional</p>
+        <h2>Bryan Tavares</h2>
+        <p>Do degradê ao acabamento na navalha, Bryan cuida dos detalhes e conversa com você sobre o estilo que quer levar da cadeira.</p>
+        <a class="button outline" href="#agendar">Agendar com Bryan</a>
+      </div>
+      <img class="photo portrait" src="photos/bryan.png" alt="Bryan, barbeiro profissional da Evolve, sentado com tesoura e máquina de corte" loading="lazy">
+    </div>
+  </section>
+  <section class="wrap split booking" id="agendar">
+    <div>
+      <p class="eyebrow">Agendamento com Bryan</p>
+      <h2>Escolha seu horário.</h2>
+      <p>Informe o serviço, a data e o horário de sua preferência. A barbearia confirma a disponibilidade pelo WhatsApp.</p>
+    </div>
+    <form id="booking" class="panel">
+      <label>Seu nome<input name="customer" autocomplete="name" maxlength="80" required></label>
+      <fieldset class="service-picker" data-service-picker><legend>Serviços do atendimento</legend></fieldset>
+      <div class="fields">
+        <label>Data<input name="date" type="date" required></label>
+        <label>Horário<input name="time" type="time" required></label>
+      </div>
+      <button class="button" type="submit">Solicitar pelo WhatsApp</button>
+      <p class="status" role="status"></p>
+    </form>
+  </section>
+  <section id="avaliacoes" class="reviews">
+    <div class="wrap">
+      <p class="eyebrow">Avaliações do Google</p>
+      <h2>Quem passa pela Evolve</h2>
+      <div id="reviews-list" class="service-grid"></div>
+      <div class="actions"><a data-link="google" class="button outline" href="#contatos">Buscar a Evolve no Google Maps</a><a data-link="googleReview" class="button" href="#contatos">Deixar uma avaliação</a></div>
+    </div>
+  </section>
+</main>
+<footer id="contatos"><div class="wrap footer-row"><span>Feito por QG de valor</span><p id="contacts-status" class="status" role="status"></p><a href="agenda.html">Agenda da equipe</a></div></footer>
+</body>
+</html>

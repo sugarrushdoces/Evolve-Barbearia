@@ -1,0 +1,26 @@
+BARBEARIA EVOLVE
+
+Abra index.html no navegador para visualizar o site.
+A página agenda.html é a agenda local da equipe.
+
+CONFIGURAÇÃO
+Abra script.js e ajuste o objeto config, no início do arquivo:
+- whatsapp: DDI + DDD + número, somente dígitos, começando por 55.
+- instagram: link oficial do Instagram.
+- google: link oficial do perfil no Google Maps.
+- googleReview: link para escrever uma avaliação.
+- reviews: inclua comentários reais, com author, rating e text.
+
+O cliente informa o horário desejado. Com o WhatsApp configurado, o site abre a mensagem pronta para envio. A equipe recebe a solicitação no WhatsApp e registra o atendimento manualmente na agenda. Na agenda, é possível editar, filtrar e atualizar a situação. A confirmação de dois horários sobrepostos é bloqueada.
+
+A agenda guarda os registros somente no navegador usado para cadastrar os atendimentos. Use o mesmo navegador e endereço do site no dispositivo da equipe. A seção de avaliações lê os comentários cadastrados no arquivo script.js. Se esse cadastro estiver vazio, o site leva o visitante ao Google.
+
+VÁRIOS SERVIÇOS
+Marque os serviços desejados na seção Serviços ou no formulário. As duas listas ficam sincronizadas. A mensagem do WhatsApp inclui todos os itens. Na agenda da equipe, marque os serviços e informe a duração total.
+
+COMENTÁRIOS REAIS
+No início de script.js, a lista reviews tem três espaços prontos. Em cada espaço, preencha author com o nome público do cliente, text com o comentário e rating com a nota original de 1 a 5. A página mostra cinco estrelas abaixo do comentário e preenche somente as correspondentes à nota. Espaços vazios ficam fora da lista pública.
+
+FOTOS NAS AVALIAÇÕES
+Salve a foto do cliente na pasta photos. Em script.js, no cartão correspondente, preencha photo com o caminho (exemplo: 'photos/cliente-1.jpg'), author com o nome, text com o comentário e rating com a nota de 1 a 5.
+O WhatsApp de agendamento já está configurado para (41) 98822-3209.
