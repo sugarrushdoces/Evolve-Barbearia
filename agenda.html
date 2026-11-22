@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda da equipe | Barbearia Evolve</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <style>
+    [hidden] {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a href="index.html">
+      <img class="logo" src="photos/logo.jpg"
+        width="82" height="82"
+        alt="Barbearia Evolve">
+    </a>
+    <a href="index.html">Voltar ao site</a>
+  </div>
+</header>
+
+<!-- TELA DE ACESSO -->
+<section id="login-screen" class="wrap agenda">
+  <div class="panel login-panel">
+    <p class="eyebrow">Área restrita</p>
+    <h1>Agenda da Equipe</h1>
+    <p>Digite a senha para acessar a agenda da Barbearia Evolve.</p>
+
+    <form id="login-form">
+      <label for="senha-equipe">Senha de acesso</label>
+
+      <input
+        id="senha-equipe"
+        type="password"
+        placeholder="Digite sua senha"
+        autocomplete="current-password"
+        required
+      >
+
+      <button type="submit" class="button">
+        Entrar na agenda
+      </button>
+
+      <p id="login-status" class="status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- AGENDA PROTEGIDA -->
+<main id="agenda-protegida" class="wrap agenda" hidden>
+
+  <p class="eyebrow">Barbearia Evolve</p>
+  <h1>Agenda da equipe</h1>
+
+  <button id="logout" type="button" class="button outline">
+    Sair da agenda
+  </button>
+
+  <p>
+    Registre os pedidos recebidos pelo WhatsApp
+    e atualize a situação de cada atendimento.
+    Os registros ficam neste navegador.
+  </p>
+
+  <form id="management" class="panel">
+    <div class="fields">
+
+      <label>Cliente
+        <input name="customer" maxlength="80" required>
+      </label>
+
+      <label>Data
+        <input name="date" type="date" required>
+      </label>
+
+      <label>Horário
+        <input name="time" type="time" required>
+      </label>
+
+      <label>Duração em minutos
+        <input name="duration" type="number"
+          min="5" max="720" step="5"
+          value="30" required>
+      </label>
+
+    </div>
+
+    <fieldset class="service-picker" data-service-picker>
+      <legend>Serviços do atendimento</legend>
+    </fieldset>
+
+    <div class="actions">
+      <button type="submit" class="button">
+        Registrar pedido
+      </button>
+
+      <button id="reset-edit" type="button"
+        class="button outline" hidden>
+        Cancelar edição
+      </button>
+    </div>
+
+    <p class="status" role="status"></p>
+  </form>
+
+  <h2>Atendimentos</h2>
+
+  <label class="filter">
+    Filtrar por data
+    <input id="filter-date" type="date">
+  </label>
+
+  <div id="appointment-list"></div>
+
+</main>
+
+<script>
+  const senhaCorreta = '123';
+
+  const loginScreen = document.getElementById('login-screen');
+  const agenda = document.getElementById('agenda-protegida');
+  const loginForm = document.getElementById('login-form');
+  const loginStatus = document.getElementById('login-status');
+
+  function liberarAgenda() {
+    loginScreen.hidden = true;
+    agenda.hidden = false;
+    sessionStorage.setItem('evolve-acesso', 'autorizado');
+  }
+
+  if (sessionStorage.getItem('evolve-acesso') === 'autorizado') {
+    liberarAgenda();
+  }
+
+  loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const senha = document.getElementById('senha-equipe').value;
+
+    if (senha === senhaCorreta) {
+      liberarAgenda();
+    } else {
+      loginStatus.textContent = 'Senha incorreta. Tente novamente.';
+      document.getElementById('senha-equipe').value = '';
+    }
+  });
+
+  document.getElementById('logout').addEventListener('click', function() {
+    sessionStorage.removeItem('evolve-acesso');
+    agenda.hidden = true;
+    loginScreen.hidden = false;
+    loginForm.reset();
+    loginStatus.textContent = '';
+  });
+</script>
+
+</body>
+</html>

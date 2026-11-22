@@ -1,0 +1,566 @@
+:root {
+  color-scheme: dark;
+  --bg: #0e0e10;
+  --panel: #18181b;
+  --ink: #f5f3ef;
+  --muted: #c8c3bd;
+  --line: #423e3d;
+  --metal: #d1c6b8;
+  --silver: #f2ede6;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    1rem/1.65 system-ui,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+:focus-visible {
+  outline: 2px solid #f2d6ad;
+  outline-offset: 4px;
+}
+.wrap {
+  width: min(1120px, calc(100% - 3rem));
+  margin-inline: auto;
+}
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgb(10 10 11 / 87%);
+  border-bottom: 1px solid rgb(205 209 216 / 45%);
+  backdrop-filter: blur(14px);
+}
+.bar,
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 88px;
+}
+.logo {
+  display: block;
+  object-fit: contain;
+}
+nav,
+.social,
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.bar nav {
+  gap: clamp(0.8rem, 2.6vw, 2rem);
+  font-size: 0.95rem;
+}
+.social {
+  font-size: 0.875rem;
+  color: var(--metal);
+}
+.hero {
+  min-height: min(740px, 85svh);
+  display: grid;
+  align-items: center;
+  background-color: #1c1b1c;
+  background-image:
+    linear-gradient(90deg, #0c0c0df9 5%, #101012e0 36%, #10101235 100%),
+    linear-gradient(0deg, #0e0e10, transparent 28%), url("photos/sala.png");
+  background-position:
+    center,
+    center,
+    center 45%;
+  background-size: cover;
+}
+.hero .wrap {
+  padding-block: 5rem;
+}
+h1,
+h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  line-height: 1.02;
+  margin: 0.3em 0;
+  letter-spacing: -0.04em;
+}
+h1 {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+}
+h2 {
+  font-size: clamp(2rem, 4.5vw, 3.7rem);
+}
+p {
+  color: var(--muted);
+  max-width: 60ch;
+}
+.eyebrow {
+  color: var(--metal);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin: 0;
+}
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 0.65rem 1.25rem;
+  border-radius: 2px;
+  background: linear-gradient(120deg, var(--silver), var(--metal));
+  color: #141213;
+  border: 1px solid var(--metal);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+}
+.button:hover {
+  filter: brightness(1.12);
+  text-decoration: none;
+}
+.outline {
+  background: transparent;
+  color: var(--ink);
+  border-color: #8b8480;
+}
+.outline:hover {
+  background: #ffffff0d;
+}
+.services,
+.professional,
+.reviews {
+  padding-block: clamp(4rem, 9vw, 7.5rem);
+  border-block: 1px solid var(--line);
+}
+.services {
+  background:
+    linear-gradient(110deg, #101012f5, #111113dc),
+    url("photos/marca.png") center 48% / cover;
+}
+.professional {
+  background:
+    linear-gradient(90deg, #171719fa, #171719de),
+    url("photos/tesouras.png") center 35% / cover;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+.card,
+.panel,
+.appointment {
+  padding: clamp(1.1rem, 2.6vw, 1.85rem);
+  background: linear-gradient(150deg, #202023, var(--panel) 65%);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(1.75rem, 6vw, 6rem);
+}
+#historia,
+.booking,
+.agenda {
+  padding-block: 5rem;
+}
+.photo {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border: 1px solid #605952;
+  border-radius: 2px;
+  box-shadow: 0 18px 40px #0005;
+}
+.family {
+  object-position: center 59%;
+  aspect-ratio: 4/4;
+}
+.portrait {
+  object-position: center 34%;
+  aspect-ratio: 4/4;
+}
+.signature {
+  font:
+    1.32rem/1.5 Georgia,
+    serif;
+  color: var(--ink);
+}
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+input,
+select {
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 0.6rem;
+  background: #111113;
+  color: var(--ink);
+  border: 1px solid #6a6360;
+  border-radius: 3px;
+  font: inherit;
+}
+.panel,
+.fields {
+  display: grid;
+  gap: 1rem;
+}
+.fields {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.status {
+  margin: 0;
+}
+.status:empty {
+  display: none;
+}
+.reviews {
+  background: #161618;
+}
+.reviews .actions {
+  margin-top: 1.35rem;
+}
+.stars {
+  color: var(--metal);
+}
+.footer-row {
+  padding-block: 1.25rem;
+  color: var(--muted);
+}
+.agenda .panel {
+  margin-block: 2rem;
+}
+.appointment {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+.appointment p {
+  margin: 0.2rem 0;
+}
+.filter {
+  max-width: 15rem;
+  margin: 1rem 0;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 760px) {
+  .wrap {
+    width: calc(100% - 2rem);
+  }
+  .bar {
+    flex-wrap: wrap;
+    padding-bottom: 0.75rem;
+  }
+  .social {
+    width: 100%;
+  }
+  nav {
+    font-size: 0.9rem;
+    gap: 0.7rem;
+  }
+  .hero {
+    min-height: 560px;
+  }
+  .service-grid,
+  .split,
+  .appointment {
+    grid-template-columns: 1fr;
+  }
+  .services,
+  .reviews,
+  .professional,
+  #historia,
+  .booking,
+  .agenda {
+    padding-block: 3.2rem;
+  }
+  .photo {
+    max-width: 460px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.6rem;
+  font: inherit;
+  color: var(--ink);
+  background: #111113;
+  border: 1px solid #6a6360;
+}
+.appointment select {
+  width: auto;
+}
+.service-actions {
+  margin-top: 1.25rem;
+}
+.services-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
+  align-items: start;
+  gap: clamp(1.75rem, 7vw, 6rem);
+}
+.services-layout h2 {
+  margin-top: 0;
+}
+.service-picker {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.service-picker legend {
+  padding: 0;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+.service-group {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #111113;
+}
+.service-group + .service-group {
+  margin-top: 0.65rem;
+}
+.service-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  min-height: 52px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(115deg, #252528, #18181a);
+  color: var(--silver);
+}
+.service-bar::-webkit-details-marker {
+  display: none;
+}
+.service-bar:hover,
+.service-group[open] > .service-bar {
+  background: linear-gradient(115deg, #303034, #1e1e20);
+}
+.service-bar::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 1px solid var(--metal);
+  border-bottom: 1px solid var(--metal);
+  transform: translateY(-0.1rem) rotate(45deg);
+}
+.service-group[open] > .service-bar::after {
+  transform: translateY(0.1rem) rotate(225deg);
+}
+.service-accordion .service-bar {
+  padding: 1rem 1.2rem;
+  min-height: 64px;
+  font:
+    1.35rem/1.2 Georgia,
+    serif;
+}
+.service-count {
+  font:
+    0.875rem/1.3 system-ui,
+    sans-serif;
+  color: var(--metal);
+}
+.service-options {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.45rem 0.75rem;
+  border-top: 1px solid var(--line);
+}
+.service-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0.35rem 0.4rem;
+  cursor: pointer;
+}
+.service-option:hover {
+  background: #ffffff09;
+}
+.service-option input[type="checkbox"] {
+  flex: none;
+  width: 1.15rem;
+  min-height: 0;
+  height: 1.15rem;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--metal);
+}
+.service-option:has(input:checked) {
+  color: var(--metal);
+}
+.reviews blockquote {
+  margin: 0.55rem 0 0.85rem;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+.stars {
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+}
+.review-placeholder {
+  border-style: dashed;
+}
+.review-placeholder p {
+  margin: .7rem 0 .85rem;
+}
+.review-card {
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: anywhere;
+}
+.review-card .stars {
+  margin-top: auto;
+}
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.review-avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid rgb(205 209 216 / 40%);
+  background: linear-gradient(140deg, #404044, #202022);
+  color: var(--silver);
+}
+.review-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 760px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .service-accordion .service-bar {
+    font-size: 1.22rem;
+    padding: 0.8rem 0.9rem;
+  }
+  .hero {
+    background-position:
+      center,
+      center,
+      58% 46%;
+  }
+}
+.img-icon {
+  width: 32px;
+  height: 32px;
+}
+.top .bar {
+  flex-wrap: nowrap;
+  gap: .5rem;
+  padding-bottom: 0;
+}
+.top .social {
+  width: auto;
+  flex-wrap: nowrap;
+  gap: clamp(.25rem, 2vw, .85rem);
+}
+.top .social a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+}
+/* Estrelas das avaliações */
+.review-card .stars {
+  color: #FFD700 !important;
+  font-size: 24px;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+/* Tela de acesso à agenda */
+
+.login-panel {
+  max-width: 440px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  text-align: center;
+  border: 1px solid rgba(192, 192, 192, 0.35);
+  border-radius: 18px;
+}
+
+.login-panel h1 {
+  margin-bottom: 15px;
+}
+
+.login-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.login-panel input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid rgba(192, 192, 192, 0.4);
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  text-align: center;
+  font-size: 18px;
+}
+
+.login-panel .button {
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+#login-status {
+  color: #e57373;
+}
