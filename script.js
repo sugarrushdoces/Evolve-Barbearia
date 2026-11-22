@@ -125,7 +125,7 @@ const links = {
 
   instagram: config.instagram,
 
-  google: config.googleReview,
+  google: config.google,
 
   googleReview: config.googleReview
 };
