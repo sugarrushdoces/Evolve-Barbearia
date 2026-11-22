@@ -2,7 +2,7 @@
 
 // Preencha com os dados oficiais da barbearia antes de publicar.
 const config = {
-  whatsapp: '5541988223209',
+  whatsapp: '5541995217505',
   instagram: 'https://www.instagram.com/barbearia_evolve?utm_source=ig_web_button_share_sheet&knvt=ZDNlZDc0MzIxNw==', // URL pública do perfil
   google: 'https://www.google.com/maps/dir//Evolve+Barbearia,+Av.+Francisco+Kruger,+5544+-+Cachoeira,+Almirante+Tamandar%C3%A9+-+PR,+83504-490/@-25.3171679,-49.2537338,2731m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x94dce79d666f7a65:0x4af6e5ad9186b555!2m2!1d-49.2700922!2d-25.3408756?entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D', // URL do perfil no Google Maps
   googleReview: 'https://search.google.com/local/writereview?placeid=ChIJZXpvZp3n3JQRVbWGka3l9ko', // URL direta para escrever uma avaliação
@@ -46,7 +46,7 @@ const dateTime = (item) => new Date(item.date + 'T' + item.time + ':00-03:00');
 const formatDate = (date) => date.split('-').reverse().join('/');
 const dateInBrazil = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' });
 const hasPhone = /^55\d{10,11}$/.test(config.whatsapp);
-const mapSearch = 'https://www.google.com/maps/search/?api=1&query=Barbearia%20Evolve%20Bryan';
+const mapSearch = 'search.google.com/local/writereview?placeid=ChIJZXpvZp3n3JQRVbWGka3l9ko';
 
 function element(tag, value, className) {
   const node = document.createElement(tag);
@@ -119,10 +119,15 @@ if (serviceList) {
 }
 
 const links = {
-  whatsapp: hasPhone ? 'https://wa.me/' + config.whatsapp : '#agendar',
+    whatsapp: hasPhone
+    ? 'https://wa.me/' + config.whatsapp
+    : '#agendar',
+
   instagram: config.instagram,
-  google: config.google || mapSearch,
-  googleReview: config.googleReview || config.google || mapSearch
+
+  google: config.googleReview,
+
+  googleReview: config.googleReview
 };
 document.querySelectorAll('[data-link]').forEach((link) => {
   const url = links[link.dataset.link];
