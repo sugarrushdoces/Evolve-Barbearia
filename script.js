@@ -5,7 +5,7 @@ const config = {
   whatsapp: '5541988223209',
   instagram: 'https://www.instagram.com/barbearia_evolve?utm_source=ig_web_button_share_sheet&knvt=ZDNlZDc0MzIxNw==', // URL pública do perfil
   google: 'https://www.google.com/maps/dir//Evolve+Barbearia,+Av.+Francisco+Kruger,+5544+-+Cachoeira,+Almirante+Tamandar%C3%A9+-+PR,+83504-490/@-25.3171679,-49.2537338,2731m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x94dce79d666f7a65:0x4af6e5ad9186b555!2m2!1d-49.2700922!2d-25.3408756?entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D', // URL do perfil no Google Maps
-  googleReview: 'https://www.google.com/search?hl=pt-BR&gl=br&q=Evolve+Barbearia+-+Av.+Francisco+Kruger,+5544+-+Cachoeira,+Almirante+Tamandar%C3%A9+-+PR,+83504-490&ludocid=5401757336711116117&lsig=AB86z5VCQoXBNeYIRfeUPdwv8NqD#lrd=0x94dce79d666f7a65:0x4af6e5ad9186b555,3', // URL direta para escrever uma avaliação
+  googleReview: 'https://search.google.com/local/writereview?placeid=ChIJZXpvZp3n3JQRVbWGka3l9ko', // URL direta para escrever uma avaliação
   reviews: [
   {
     author: 'Igor Palhano',
